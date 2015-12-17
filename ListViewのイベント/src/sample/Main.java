@@ -1,82 +1,13 @@
-package sample;
-
-import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.Scene;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
-import javafx.util.Callback;
-
-import java.lang.reflect.Field;
-
-public class Main extends Application {
-    ListView<String> view = new ListView<>();
-    ObservableList<String> data = FXCollections.observableArrayList();
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-
-        VBox box = new VBox();
-
-        box.getChildren().addAll(view);
-        VBox.setVgrow(view, Priority.ALWAYS);
-
-        for (Field f :Color.class.getFields()){
-            if (f.getName().equals("TRANSPARENT")){
-                continue;
-            }
-            data.add(f.getName());
-        }
-
-        view.setItems(data);
-
-        view.setCellFactory
-                (new Callback<ListView<String>, ListCell<String>>() {
-                     @Override
-                     public ListCell<String> call(ListView<String> list) {
-                         return new MyCell();
-                     }
-                 }
-                );
-
-        view.getSelectionModel().selectedItemProperty().addListener(
-                new ChangeListener<String>() {
-                    @Override
-                    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                        System.out.println(newValue);
-                    }
-                }
-        );
-
-        Scene scene = new Scene(box,400,600);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("javafx.scene.paint.Color");
-        primaryStage.show();
-
-    }
-
-    static class MyCell extends ListCell<String> {
-        @Override
-        public void updateItem(String item, boolean empty) {
-            super.updateItem(item, empty);
-            Rectangle rect = new Rectangle(30, 20);
-            if (item != null) {
-                setText("   "+item.toString());
-                rect.setFill(Color.web(item));
-                setGraphic(rect);
-            }
-        }
-    }
-
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
+                list.add(new Language("Java", 19.565));
+                list.add(new Language("C", 15.621),
+                list.add(new Language("C++", 6.782),
+                list.add(new Language("C#", 4.909),
+                list.add(new Language("Python", 3.664),
+                list.add(new Language("PHP", 2.530),
+                list.add(new Language("JavaScript", 2.342),
+                list.add(new Language("VB.NET", 2.062),
+                list.add(new Language("Perl", 1.899),
+                list.add(new Language("Objective-C", 1.821),
+                list.add(new Language("Assembly", 1.806),
+                list.add(new Language("Ruby", 1.783),
+                list.add(new Language("Other", 10.065)
