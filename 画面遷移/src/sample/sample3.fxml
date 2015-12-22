@@ -1,0 +1,18 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<GridPane alignment="center" hgap="10" vgap="10" style="-fx-background-color: #b0f6ad;" fx:controller="sample.Controller3" xmlns:fx="http://javafx.com/fxml" >
+    <columnConstraints>
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+    <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" text="画面3" GridPane.columnSpan="2" />
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false"  text="戻る" GridPane.rowIndex="1"  onAction="#handlePrev"/>
+        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="進む" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#handleNext"/>
+    </children>
+</GridPane>
